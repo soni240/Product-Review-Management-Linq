@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Product_Review_Management
+namespace UC1_AddingDetailsInList
 {
-    //getter and setter fields
+    /// getter and setter fields
+    
+    
     public class ProductReview
     {
         public int productId { get; set; }
