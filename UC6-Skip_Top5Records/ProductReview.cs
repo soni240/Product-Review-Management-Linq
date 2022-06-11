@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Product_Review_Management
+namespace UC6_Skip_Top5Records
 {
-    //getter and setter fields
     public class ProductReview
     {
         public int productId { get; set; }

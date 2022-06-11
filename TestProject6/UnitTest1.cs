@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Product_Review_Management;
 using System.Collections.Generic;
 
-namespace TestValidation
+namespace TestProject6
 {
     [TestClass]
     public class UnitTest1
@@ -73,31 +73,6 @@ namespace TestValidation
         {
             int expected = 20;
             int actual = ProductReviewManager.SkipTopFiveRecords(productList);
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// UC9-retrieve the records whose column islike has true using (DataTable)
-        /// </summary>
-        [TestMethod]
-        public void TestMethodForReturnsOnlyIsLikeFieldAsTrue()
-        {
-            int expected = 18;
-            int actual = ProductReviewManager.ReturnsOnlyIsLikeFieldAsTrue();
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void TestMethodForAverageRating()
-        {
-            double expected = 12.44;
-            double actual = ProductReviewManager.AverageOfRating();
-            Assert.AreEqual(expected, actual);
-
-        }
-        [TestMethod]
-        public void TestMethodForReturnsCountOfReviewMessageContainsGood()
-        {
-            int expected = 5;
-            int actual = ProductReviewManager.ReturnsReviewMessageContainsGood();
             Assert.AreEqual(expected, actual);
         }
     }
