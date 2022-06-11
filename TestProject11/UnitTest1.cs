@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Product_Review_Management;
 using System.Collections.Generic;
 
-namespace TestValidation
+namespace TestProject11
 {
     [TestClass]
     public class UnitTest1

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Product_Review_Management
+namespace UC11_Retrieve_Records_Whose_Review_As_Good
 {
-    //getter and setter fields
     public class ProductReview
     {
         public int productId { get; set; }
