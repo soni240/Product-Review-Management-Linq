@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC2_RetrieveTop3Records
+namespace UC3_RetrieveRecordsRatingandID
 {
     public class ProductReviewManager
     {
@@ -65,6 +65,18 @@ namespace UC2_RetrieveTop3Records
             var res = (from product in products orderby product.rating descending select product).Take(3).ToList();
             IterateThroughList(res);
             return res.Count;
+        }
+        /// <summary>
+        /// UC3-->Retrieve  records from list based on productid and rating > 3  
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static int[] RetrieveRecordsBasedOnRatingAndProductId(List<ProductReview> products)
+        {
+            AddingProductReview(products);
+            Console.WriteLine("\n-----------Retrieve Records Based On Rating and Product Id-----------");
+            var res = (from product in products where product.rating > 3 && (product.productId == 1 || product.productId == 4 || product.productId == 9) select product.productId).ToArray();
+            return res;
         }
     }
 }

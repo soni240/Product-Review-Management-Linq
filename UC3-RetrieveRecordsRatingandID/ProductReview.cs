@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC2_RetrieveTop3Records
+namespace UC3_RetrieveRecordsRatingandID
 {
     //getter and setter fields
     public class ProductReview
