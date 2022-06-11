@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Product_Review_Management;
 using System.Collections.Generic;
-using UC5_Retrieving_ProductId_Review;
 
-namespace TestProject5
+namespace TestProject6
 {
     [TestClass]
     public class UnitTest1
@@ -65,8 +65,17 @@ namespace TestProject5
             string actual = ProductReviewManager.RetrieveOnlyProductIdAndReviews(productList);
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// UC6--->Skip Top five records(Already 25 Records present in list)
+        /// </summary>
+        [TestMethod]
+        public void TestMethodSkipTopFiveRecords()
+        {
+            int expected = 20;
+            int actual = ProductReviewManager.SkipTopFiveRecords(productList);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 
     
-

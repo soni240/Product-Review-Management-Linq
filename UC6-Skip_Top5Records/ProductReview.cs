@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC5_Retrieving_ProductId_Review
+namespace UC6_Skip_Top5Records
 {
     public class ProductReview
     {

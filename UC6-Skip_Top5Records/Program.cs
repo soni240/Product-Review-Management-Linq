@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using UC5_Retrieving_ProductId_Review;
+using UC6_Skip_Top5Records;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -24,9 +24,10 @@ switch (option)
     case 5:
         ProductReviewManager.RetrieveOnlyProductIdAndReviews(productReviews);
         break;
-
+    case 6:
+        ProductReviewManager.SkipTopFiveRecords(productReviews);
+        break;
 }
-        
-    
+
 
 

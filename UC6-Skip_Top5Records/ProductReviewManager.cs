@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC5_Retrieving_ProductId_Review
+namespace UC6_Skip_Top5Records
 {
     public class ProductReviewManager
     {
@@ -114,6 +114,19 @@ namespace UC5_Retrieving_ProductId_Review
                 result += ele.ProductId + " ";
             }
             return result;
+        }
+        /// <summary>
+        /// UC6--->Skip Top five records
+        /// </summary>
+        /// <param name="products"></param>
+        /// <returns></returns>
+        public static int SkipTopFiveRecords(List<ProductReview> products)
+        {
+            AddingProductReview(products);
+            Console.WriteLine("\n----------Skip Top Five records in list");
+            var res = (from product in products orderby product.rating descending select product).Skip(5).ToList();
+            IterateThroughList(res);
+            return res.Count;
         }
     }
 }
