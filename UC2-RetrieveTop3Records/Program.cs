@@ -1,13 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-
-
-
-
-
-using Product_Review_Management;
-using UC1_AddingDetailsInList;
-using ProductReview = Product_Review_Management.ProductReview;
+using UC2_RetrieveTop3Records;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -19,5 +12,8 @@ switch (option)
 {
     case 1:
         ProductReviewManager.AddingProductReview(productReviews);
+        break;
+    case 2:
+        ProductReviewManager.RetrieveTopThreeRating(productReviews);
         break;
 }
