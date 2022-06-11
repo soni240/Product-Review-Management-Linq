@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC3_RetrieveRecordsRatingandID
+namespace UC4_CountofProductID
 {
     //getter and setter fields
-    public class ProductReview
+    internal class ProductReview
     {
         public int productId { get; set; }
         public int userId { get; set; }

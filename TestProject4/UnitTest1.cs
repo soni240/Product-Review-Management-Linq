@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Product_Review_Management;
 using System.Collections.Generic;
 
-namespace TestProject3
+namespace TestProject4
 {
     [TestClass]
     public class UnitTest1
@@ -35,14 +35,15 @@ namespace TestProject3
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// UC3-->Retrieve  records from list based on productid and rating > 3 
+        /// UC4-->Retrived the count of productId
         /// </summary>
         [TestMethod]
-        public void TestMethodForRetrieveRecordsBasedOnRatingAndProductId()
+        public void TestMethodForCountingProductId()
         {
-            int[] expected = { 1, 1, 4, 9, 9, 1, 4 };
-            var actual = ProductReviewManager.RetrieveRecordsBasedOnRatingAndProductId(productList);
-            CollectionAssert.AreEqual(expected, actual);
+            string expected = "1 3 2 4 3 4 4 2 9 2 5 3 7 1 10 1 12 1 14 1 18 1 13 1 19 1 ";
+            string actual = ProductReviewManager.CountingProductId(productList);
+            Assert.AreEqual(expected, actual);
+
         }
     }
 }

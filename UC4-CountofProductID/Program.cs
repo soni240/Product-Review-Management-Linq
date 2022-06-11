@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using UC3_RetrieveRecordsRatingandID;
+using Product_Review_Management;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -16,10 +16,13 @@ switch (option)
     case 2:
         ProductReviewManager.RetrieveTopThreeRating(productReviews);
         break;
-    case 3:
-        ProductReviewManager.RetrieveRecordsBasedOnRatingAndProductId(productReviews);
+
+    case 4:
+        ProductReviewManager.CountingProductId(productReviews);
         break;
 
 }
         
     
+
+

@@ -3,9 +3,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>UC3_RetrieveRecordsRatingandID</RootNamespace>
+    <RootNamespace>UC4_CountofProductID</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Product Review Management\Product Review Management.csproj" />
+  </ItemGroup>
 
 </Project>
