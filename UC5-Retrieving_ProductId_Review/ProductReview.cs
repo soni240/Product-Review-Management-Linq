@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC4_CountofProductID
+namespace UC5_Retrieving_ProductId_Review
 {
-    //getter and setter fields
-    internal class ProductReview
+    public class ProductReview
     {
         public int productId { get; set; }
         public int userId { get; set; }

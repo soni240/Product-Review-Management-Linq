@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-using Product_Review_Management;
+using UC5_Retrieving_ProductId_Review;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -16,9 +15,14 @@ switch (option)
     case 2:
         ProductReviewManager.RetrieveTopThreeRating(productReviews);
         break;
-
+    case 3:
+        ProductReviewManager.RetrieveRecordsBasedOnRatingAndProductId(productReviews);
+        break;
     case 4:
         ProductReviewManager.CountingProductId(productReviews);
+        break;
+    case 5:
+        ProductReviewManager.RetrieveOnlyProductIdAndReviews(productReviews);
         break;
 
 }
