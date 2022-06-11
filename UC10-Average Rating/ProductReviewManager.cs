@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
+namespace UC10_Average_Rating
 {
     public class ProductReviewManager
     {
@@ -40,7 +40,7 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
             products.Add(new ProductReview() { productId = 19, userId = 8, review = "Average", rating = 11, isLike = true });
             products.Add(new ProductReview() { productId = 3, userId = 9, review = "Bad", rating = 6, isLike = false });
             products.Add(new ProductReview() { productId = 5, userId = 4, review = "Average", rating = 13, isLike = true });
-            IterateThroughList(products);
+            //IterateThroughList(products);
             return products.Count;
         }
         /// <summary>
@@ -95,12 +95,11 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
                 Console.WriteLine("ProductId " + ele.ProductId + " " + "Count " + " " + ele.count);
                 Console.WriteLine("-------------");
                 res += ele.ProductId + " " + ele.count + " ";
-                Console.WriteLine(res);
             }
             return res;
         }
         /// <summary>
-        /// UC5 and UC7---->Retrieving the product id in list
+        /// UC5---->Retrieving the product id in list
         /// </summary>
         /// <param name="products"></param>
         /// <returns></returns>
@@ -133,7 +132,7 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
         /// UC8-->Using DataTable 
         /// </summary>
         /// <param name="products"></param>
-        public static int CreateDataTable(List<ProductReview> products)
+        public static DataTable CreateDataTable(List<ProductReview> products)
         {
             AddingProductReview(products);
             DataTable dt = new DataTable();
@@ -148,8 +147,7 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
                 dt.Rows.Add(data.productId, data.userId, data.rating, data.review, data.isLike);
             }
             //IterateTable(dt);
-            int c = ReturnsOnlyIsLikeFieldAsTrue(dt);
-            return c;
+            return dt;
         }
         /// <summary>
         /// Iterate Thorugh Table
@@ -163,14 +161,14 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
             }
         }
         /// <summary>
-        /// UC9-->ReturnsOnlyIsLikeFieldAsTrue
+        /// UC9-retrieve the records whose column islike has true using (DataTable)
         /// </summary>
-        /// <param name="products"></param>
-        public static int ReturnsOnlyIsLikeFieldAsTrue(DataTable table)
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static int ReturnsOnlyIsLikeFieldAsTrue()
         {
-            //List<ProductReview> products = new List<ProductReview>();
-            //AddingProductReview(products);
-            //CreateDataTable(products);
+            List<ProductReview> products = new List<ProductReview>();
+            DataTable table = CreateDataTable(products);
             int count = 0;
             var res = from t in table.AsEnumerable() where t.Field<bool>("isLike") == true select t;
             foreach (var p in res)
@@ -179,6 +177,19 @@ namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
                 count++;
             }
             return count;
+        }
+        /// <summary>
+        /// Finding the average rating value
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static double AverageOfRating()
+        {
+            List<ProductReview> products = new List<ProductReview>();
+            DataTable table1 = CreateDataTable(products);
+            double result = (double)table1.Select().Where(p => p["rating"] != DBNull.Value).Select(c => Convert.ToDecimal(c["rating"])).Average();
+            Console.WriteLine(result);
+            return result;
         }
     }
 }
