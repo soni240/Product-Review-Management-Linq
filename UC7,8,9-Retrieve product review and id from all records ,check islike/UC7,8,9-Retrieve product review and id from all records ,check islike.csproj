@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>UC6_Skip_Top5Records</RootNamespace>
+    <RootNamespace>UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>

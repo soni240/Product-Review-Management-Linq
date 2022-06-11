@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Product_Review_Management;
 using System.Collections.Generic;
 
-namespace TestProject6
+namespace TestProject7
 {
     [TestClass]
     public class UnitTest1
@@ -73,6 +73,14 @@ namespace TestProject6
         {
             int expected = 20;
             int actual = ProductReviewManager.SkipTopFiveRecords(productList);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethodForReturnsOnlyIsLikeFieldAsTrue()
+        {
+            int expected = 18;
+
+            int actual = ProductReviewManager.CreateDataTable(productList);
             Assert.AreEqual(expected, actual);
         }
     }
