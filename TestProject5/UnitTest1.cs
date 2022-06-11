@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Product_Review_Management;
 using System.Collections.Generic;
+using UC5_Retrieving_ProductId_Review;
 
-namespace TestValidation
+namespace TestProject5
 {
     [TestClass]
     public class UnitTest1
@@ -65,42 +65,8 @@ namespace TestValidation
             string actual = ProductReviewManager.RetrieveOnlyProductIdAndReviews(productList);
             Assert.AreEqual(expected, actual);
         }
-        /// <summary>
-        /// UC6--->Skip Top five records(Already 25 Records present in list)
-        /// </summary>
-        [TestMethod]
-        public void TestMethodSkipTopFiveRecords()
-        {
-            int expected = 20;
-            int actual = ProductReviewManager.SkipTopFiveRecords(productList);
-            Assert.AreEqual(expected, actual);
-        }
-        /// <summary>
-        /// UC9-retrieve the records whose column islike has true using (DataTable)
-        /// </summary>
-        [TestMethod]
-        public void TestMethodForReturnsOnlyIsLikeFieldAsTrue()
-        {
-            int expected = 18;
-            int actual = ProductReviewManager.ReturnsOnlyIsLikeFieldAsTrue();
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void TestMethodForAverageRating()
-        {
-            double expected = 12.44;
-            double actual = ProductReviewManager.AverageOfRating();
-            Assert.AreEqual(expected, actual);
-
-        }
-        [TestMethod]
-        public void TestMethodForReturnsCountOfReviewMessageContainsGood()
-        {
-            int expected = 5;
-            int actual = ProductReviewManager.ReturnsReviewMessageContainsGood();
-            Assert.AreEqual(expected, actual);
-        }
     }
 }
 
     
+

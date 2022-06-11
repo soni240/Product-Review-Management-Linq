@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-using Product_Review_Management;
+using UC5_Retrieving_ProductId_Review;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -25,26 +24,8 @@ switch (option)
     case 5:
         ProductReviewManager.RetrieveOnlyProductIdAndReviews(productReviews);
         break;
-    case 6:
-        ProductReviewManager.SkipTopFiveRecords(productReviews);
-        break;
-    case 7:
-        ProductReviewManager.AddingProductReview(productReviews);
-        ProductReviewManager.CreateDataTable(productReviews);
-        break;
-    case 8:
-        //DataTable dt = new DataTable();
-        //ProductReviewManager.AverageOfRating(dt);
-        //break;
-        ProductReviewManager.ReturnsOnlyIsLikeFieldAsTrue();
-        ProductReviewManager.AverageOfRating();
-        break;
-    case 9:
-        ProductReviewManager.ReturnsReviewMessageContainsGood();
-        break;
+
 }
-
-
         
     
 
