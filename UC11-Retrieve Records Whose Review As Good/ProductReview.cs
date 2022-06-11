@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UC10_Average_Rating
+namespace UC11_Retrieve_Records_Whose_Review_As_Good
 {
     public class ProductReview
     {
@@ -16,4 +16,3 @@ namespace UC10_Average_Rating
     }
 }
 
-    

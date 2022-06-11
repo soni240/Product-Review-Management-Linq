@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using UC10_Average_Rating;
+using UC11_Retrieve_Records_Whose_Review_As_Good;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -32,10 +32,18 @@ switch (option)
         ProductReviewManager.CreateDataTable(productReviews);
         break;
     case 8:
-        ProductReviewManager.CreateDataTable(productReviews);
+        //DataTable dt = new DataTable();
+        //ProductReviewManager.AverageOfRating(dt);
+        //break;
+        ProductReviewManager.ReturnsOnlyIsLikeFieldAsTrue();
         ProductReviewManager.AverageOfRating();
+        break;
+    case 9:
+        ProductReviewManager.ReturnsReviewMessageContainsGood();
         break;
 
 
 }
         
+   
+
