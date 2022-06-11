@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-using Product_Review_Management;
+using UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike;
 
 Console.WriteLine("Prodcut Review Management!!!!!!!!");
 Console.WriteLine("Adding a Prodcut Review In list");
@@ -33,18 +32,11 @@ switch (option)
         ProductReviewManager.CreateDataTable(productReviews);
         break;
     case 8:
-        //DataTable dt = new DataTable();
-        //ProductReviewManager.AverageOfRating(dt);
-        //break;
-        ProductReviewManager.ReturnsOnlyIsLikeFieldAsTrue();
-        ProductReviewManager.AverageOfRating();
+        ProductReviewManager.CreateDataTable(productReviews);
         break;
-    case 9:
-        ProductReviewManager.ReturnsReviewMessageContainsGood();
-        break;
+
+
 }
-
-
         
     
 

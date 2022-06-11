@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Product_Review_Management
+namespace UC7_8_9_Retrieve_product_review_and_id_from_all_records__check_islike
 {
     public class ProductReviewManager
     {
@@ -40,7 +40,7 @@ namespace Product_Review_Management
             products.Add(new ProductReview() { productId = 19, userId = 8, review = "Average", rating = 11, isLike = true });
             products.Add(new ProductReview() { productId = 3, userId = 9, review = "Bad", rating = 6, isLike = false });
             products.Add(new ProductReview() { productId = 5, userId = 4, review = "Average", rating = 13, isLike = true });
-            //IterateThroughList(products);
+            IterateThroughList(products);
             return products.Count;
         }
         /// <summary>
@@ -95,11 +95,12 @@ namespace Product_Review_Management
                 Console.WriteLine("ProductId " + ele.ProductId + " " + "Count " + " " + ele.count);
                 Console.WriteLine("-------------");
                 res += ele.ProductId + " " + ele.count + " ";
+                Console.WriteLine(res);
             }
             return res;
         }
         /// <summary>
-        /// UC5---->Retrieving the product id in list
+        /// UC5 and UC7---->Retrieving the product id in list
         /// </summary>
         /// <param name="products"></param>
         /// <returns></returns>
@@ -132,7 +133,7 @@ namespace Product_Review_Management
         /// UC8-->Using DataTable 
         /// </summary>
         /// <param name="products"></param>
-        public static DataTable CreateDataTable(List<ProductReview> products)
+        public static int CreateDataTable(List<ProductReview> products)
         {
             AddingProductReview(products);
             DataTable dt = new DataTable();
@@ -147,7 +148,8 @@ namespace Product_Review_Management
                 dt.Rows.Add(data.productId, data.userId, data.rating, data.review, data.isLike);
             }
             //IterateTable(dt);
-            return dt;
+            int c = ReturnsOnlyIsLikeFieldAsTrue(dt);
+            return c;
         }
         /// <summary>
         /// Iterate Thorugh Table
@@ -161,43 +163,16 @@ namespace Product_Review_Management
             }
         }
         /// <summary>
-        /// UC9-retrieve the records whose column islike has true using (DataTable)
+        /// UC9-->ReturnsOnlyIsLikeFieldAsTrue
         /// </summary>
-        /// <param name="table"></param>
-        /// <returns></returns>
-        public static int ReturnsOnlyIsLikeFieldAsTrue()
+        /// <param name="products"></param>
+        public static int ReturnsOnlyIsLikeFieldAsTrue(DataTable table)
         {
-            List<ProductReview> products = new List<ProductReview>();
-            DataTable table = CreateDataTable(products);
+            //List<ProductReview> products = new List<ProductReview>();
+            //AddingProductReview(products);
+            //CreateDataTable(products);
             int count = 0;
             var res = from t in table.AsEnumerable() where t.Field<bool>("isLike") == true select t;
-            foreach (var p in res)
-            {
-                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
-                count++;
-            }
-            return count;
-        }
-        /// <summary>
-        ///UC-10 Finding the average rating value
-        /// </summary>
-        /// <param name="table"></param>
-        /// <returns></returns>
-        public static double AverageOfRating()
-        {
-            List<ProductReview> products = new List<ProductReview>();
-            DataTable table1 = CreateDataTable(products);
-            double result = (double)table1.Select().Where(p => p["rating"] != DBNull.Value).Select(c => Convert.ToDecimal(c["rating"])).Average();
-            Console.WriteLine(result);
-            return result;
-        }
-        //UC-11
-        public static int ReturnsReviewMessageContainsGood()
-        {
-            List<ProductReview> products = new List<ProductReview>();
-            DataTable table = CreateDataTable(products);
-            int count = 0;
-            var res = from t in table.AsEnumerable() where t.Field<string>("review") == "Good" select t;
             foreach (var p in res)
             {
                 Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
